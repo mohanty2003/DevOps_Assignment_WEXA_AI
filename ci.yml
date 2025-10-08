@@ -1,13 +1,13 @@
 name: CI Build & Push to GHCR
-on:
-push:
-branches: [ "main" ]
 
+on:
+  push:
+    branches: [ "main" ]
 
 permissions:
-contents: read
-packages: write
-id-token: write
+  contents: read
+  packages: write
+  id-token: write
 
 
 jobs:
@@ -38,8 +38,10 @@ jobs:
           push: true    
           platforms: linux/amd64
           tags: |
-            ghcr.io/${{ github.repository_owner }}/${{ github.repository }}:latest
-            ghcr.io/${{ github.repository_owner }}/${{ github.repository }}:${{ github.sha }}
+            ghcr.io/${{ github.repository_owner }}/${{ github.event.repository.name }}:latest
+            ghcr.io/${{ github.repository_owner }}/${{ github.event.repository.name }}:${{ github.sha }}
+
 
       - name: Output pushed image
-        run: echo "Image pushed: ghcr.io/${{ github.repository_owner }}/${{ github.repository }}:${{ github.sha }}"
+        run: |
+          echo "Image pushed: ghcr.io/${{ github.repository_owner }}/${{ github.event.repository.name }}:${{ github.sha }}"

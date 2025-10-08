@@ -14,10 +14,13 @@ spec:
       labels:
         app: nextjs-app
     spec:
+      # Include imagePullSecrets if your GHCR package is private
+      imagePullSecrets:
+        - name: ghcr-secret
       containers:
         - name: nextjs
-          image: ghcr.io/YOUR_GH_USERNAME/YOUR_REPO:latest
-          imagePullPolicy: IfNotPresent
+          image: ghcr.io/mohanty2003/wexa_ai_assignment:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 3000
           readinessProbe:
@@ -34,5 +37,3 @@ spec:
             initialDelaySeconds: 15
             periodSeconds: 20
             failureThreshold: 5
-    imagePullSecrets:
-        - name: ghcr-secret # only if your repo is private
