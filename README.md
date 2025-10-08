@@ -130,3 +130,4 @@ After successful deployment, you should see:
 screenshots:
 <img width="658" height="238" alt="image" src="https://github.com/user-attachments/assets/1f1b2fbf-9bb3-490b-8834-2cc5add6b619" />
 ![png (4)](https://github.com/user-attachments/assets/999315f8-d02d-42eb-99e2-17bbeb3ac5f9)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/356027e3-bb10-499d-bcdc-e8114f7bc700" />
