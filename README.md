@@ -127,7 +127,6 @@ After successful deployment, you should see:
 
 ## 📸 Screenshots
 
-Include screenshots of:
-1. Running application at `http://<minikube-ip>:30080`
-2. `kubectl get pods` showing running containers
-3. GitHub Actions successful build (green checkmark)
+screenshots:
+<img width="658" height="238" alt="image" src="https://github.com/user-attachments/assets/1f1b2fbf-9bb3-490b-8834-2cc5add6b619" />
+![png (4)](https://github.com/user-attachments/assets/999315f8-d02d-42eb-99e2-17bbeb3ac5f9)
