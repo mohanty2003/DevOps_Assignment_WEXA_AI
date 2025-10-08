@@ -7,11 +7,12 @@ WORKDIR /app
 COPY app/package.json ./
 COPY app/package-lock.json* ./
 RUN apk add --no-cache python3 make g++ || true
-RUN npm ci --production --silent || npm install
+RUN npm ci --silent || npm install
 
-
-# copy source and build
+# copy source files
 COPY app/ ./
+
+# build the application
 RUN npm run build
 
 
@@ -28,6 +29,7 @@ RUN addgroup -S appgroup && adduser -S appuser -G appgroup
 COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/package.json ./
+# Copy public directory if it exists and has content
 COPY --from=builder /app/public ./public
 
 
