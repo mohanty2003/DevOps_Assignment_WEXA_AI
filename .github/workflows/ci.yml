@@ -28,11 +28,11 @@ jobs:
           echo "REPO_NAME_LOWER=${GITHUB_REPOSITORY,,}" >> $GITHUB_ENV
 
       - name: Login to GHCR
-        uses: docker/login-action@v2
+        uses: docker/login-action@v3
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
-          password: ${{ secrets.GHCR_PAT }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build and push image
         uses: docker/build-push-action@v5
@@ -44,6 +44,9 @@ jobs:
           tags: |
             ghcr.io/${{ env.REPO_NAME_LOWER }}:latest
             ghcr.io/${{ env.REPO_NAME_LOWER }}:${{ github.sha }}
+          labels: |
+            org.opencontainers.image.source=https://github.com/${{ github.repository }}
+            org.opencontainers.image.revision=${{ github.sha }}
 
 
       - name: Output pushed image
