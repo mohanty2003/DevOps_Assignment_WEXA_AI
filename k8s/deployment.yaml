@@ -19,7 +19,7 @@ spec:
         - name: ghcr-secret
       containers:
         - name: nextjs
-          image: ghcr.io/mohanty2003/wexa_ai_assignment:latest
+          image: ghcr.io/mohanty2003/devops_assignment_wexa_ai:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 3000

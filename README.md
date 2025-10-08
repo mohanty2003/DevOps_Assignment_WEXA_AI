@@ -4,7 +4,7 @@ This project demonstrates a Next.js application with automated CI/CD pipeline us
 
 ## 🚀 GHCR Image
 
-**Container Image:** `ghcr.io/<YOUR_GITHUB_USERNAME>/wexa_ai_assignment:latest`
+**Container Image:** `ghcr.io/mohanty2003/devops_assignment_wexa_ai:latest`
 
 ## 📋 Prerequisites
 
