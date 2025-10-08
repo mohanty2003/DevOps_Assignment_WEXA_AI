@@ -35,11 +35,10 @@ jobs:
         with:
           context: .
           file: ./Dockerfile
-          push: true    
+          push: true
           platforms: linux/amd64
           tags: |
             ghcr.io/${{ github.repository_owner }}/${{ github.repository }}:latest
             ghcr.io/${{ github.repository_owner }}/${{ github.repository }}:${{ github.sha }}
-
       - name: Output pushed image
         run: echo "Image pushed: ghcr.io/${{ github.repository_owner }}/${{ github.repository }}:${{ github.sha }}"
